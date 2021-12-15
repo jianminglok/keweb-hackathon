@@ -1,6 +1,6 @@
 {
-  "name": "create-react-app",
-  "version": "5.0.0",
+  "name": "keweb-hackathon-frontend",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
