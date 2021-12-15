@@ -43,7 +43,7 @@ export default function Login() {
     return (
         <Grid container component="main" sx={{ height: '100vh' }}>
             <CssBaseline />
-            <Grid item xs={2} sm={8} md={5} component={Paper} elevation={6} square>
+            <Grid item xs={12} sm={12} md={3} component={Paper} elevation={6} square>
                 <Box 
                     sx={{
                         my: 8,
@@ -53,7 +53,7 @@ export default function Login() {
                         alignItems: 'center',
                     }}
                 >
-                    <Typography component="h1" variant="h5">
+                    <Typography component="h1" variant="h5" sx={{ textAlign: 'center' }}>
                         King Edward VII Facility Checker
                     </Typography>
                     <Box component="form" noValidate onSubmit={handleSubmit(onSubmit)} sx={{ mt: 1 }}>
@@ -113,9 +113,9 @@ export default function Login() {
             </Grid>
             <Grid
                 item
-                xs={10}
-                sm={4}
-                md={7}
+                xs={0}
+                sm={0}
+                md={9}
                 sx={{
                     backgroundImage: 'url(https://nus.edu.sg/osa/images/default-source/kevii-hall/open-house/ke7.jpg)',
                     backgroundRepeat: 'no-repeat',
