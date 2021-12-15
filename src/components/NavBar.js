@@ -104,7 +104,8 @@ export default function NavBar() {
 
     var firstName = localStorage.getItem('firstName');
     var lastName = localStorage.getItem('lastName');
-    var hallName = localStorage.getItem('hallName');
+    //var hallName = localStorage.getItem('hallName');
+    hallName = 'KE7';
     var hallNameFull;
 
     switch(hallName) {

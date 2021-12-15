@@ -19,7 +19,7 @@ export default function useAuth() {
             localStorage.setItem('currentUser', res.data.currentUser);
             localStorage.setItem('firstName', res.data.firstName);
             localStorage.setItem('lastName', res.data.lastName);
-            localStorage.setItem('hallName', res.data.hallName);
+            //localStorage.setItem('hallName', res.data.hallName);
             navigate('/');
         }).catch((err) => {
             setError(err.response.data);

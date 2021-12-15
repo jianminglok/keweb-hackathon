@@ -16,7 +16,7 @@ export default function useLogout() {
                 localStorage.removeItem('currentUser');
                 localStorage.removeItem('firstName');
                 localStorage.removeItem('lastName');
-                localStorage.removeItem('hallName');
+                //localStorage.removeItem('hallName');
                 navigate('/');
                 location.reload();
             })

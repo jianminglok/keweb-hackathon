@@ -20,7 +20,8 @@ export default function Home() {
 
     let navigate = useNavigate();
 
-    var hallName = localStorage.getItem('hallName');
+    //var hallName = localStorage.getItem('hallName');
+    var hallName = 'KE7';
 
     React.useEffect(async () => {
 
