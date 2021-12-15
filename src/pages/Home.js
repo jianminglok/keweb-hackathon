@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography';
 import { useNavigate } from "react-router-dom";
 import Loading from './../components/Loading';
 import Alert from '@mui/material/Alert';
+import Button from '@mui/material/Button';
 import axios from 'axios';
 
 export default function Home() {
@@ -86,48 +87,35 @@ export default function Home() {
                     }}
                 >
 
-                    <Typography component="h1" variant="h5">
-                        Select Facility Type
-                    </Typography>
-
-                    <Grid container spacing={3} sx={{ mt: 3 }}>
+                    <Grid container spacing={1} sx={{ mt: { md: 30 }, mb: 6 }}>
                         <Grid item xs>
-                            <Box sx={{ minWidth: 275, textAlign: 'center' }}>
-                                <Card onClick={() => { navigate('/halls/' + hallName + '/facilities'); }}>
-                                    <React.Fragment>
-                                        <CardContent>
-                                            <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                                                Check the availability of our
-                                            </Typography>
-                                            <Typography variant="h1" component="div">
-                                                {hallItems.length || 0}
-                                            </Typography>
-                                            <Typography variant="body1">
-                                                {hallItems.length > 1 ? 'Facilities' : 'Facility'}
-                                            </Typography>
-                                        </CardContent>
-                                    </React.Fragment>
-                                </Card>
+                            <Box sx={{ minWidth: 275, textAlign: 'center', bgColor: '#222831' }}>
+                                <Button>
+                                    <Card onClick={() => { navigate('/halls/' + hallName + '/facilities'); }}>
+                                        <React.Fragment>
+                                            <CardContent sx={{ margin: 3 }}>
+                                                <Typography variant="h2" component="div">
+                                                    Hall Facility
+                                                </Typography>
+                                            </CardContent>
+                                        </React.Fragment>
+                                    </Card>
+                                </Button>
                             </Box>
                         </Grid>
                         <Grid item xs>
-                            <Box sx={{ minWidth: 275, textAlign: 'center' }}>
-                                <Card onClick={() => { navigate('/halls/' + hallName + '/blocks'); }}>
-                                    <React.Fragment>
-                                        <CardContent>
-                                            <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                                                Check the availability of facilities from our
-                                            </Typography>
-                                            <Typography variant="h1" component="div">
-                                                {items.length || 0}
-                                            </Typography>
-
-                                            <Typography variant="body1">
-                                                {items.length > 1 ? 'Blocks' : 'Block'}
-                                            </Typography>
-                                        </CardContent>
-                                    </React.Fragment>
-                                </Card>
+                            <Box sx={{ minWidth: 275, textAlign: 'center', color: '#222831' }}>
+                                <Button>
+                                    <Card onClick={() => { navigate('/halls/' + hallName + '/blocks/A/facilities'); }}>
+                                        <React.Fragment>
+                                            <CardContent sx={{ margin: 3 }}>
+                                                <Typography variant="h2" component="div">
+                                                    Block Facility
+                                                </Typography>
+                                            </CardContent>
+                                        </React.Fragment>
+                                    </Card>
+                                </Button>
                             </Box>
                         </Grid>
                     </Grid>

@@ -19,7 +19,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { styled, useTheme, createTheme, ThemeProvider } from '@mui/material/styles';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import LinearProgress from '@mui/material/LinearProgress';
+import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgress';
 
 export default function BlockFacilities() {
 
@@ -38,13 +38,24 @@ export default function BlockFacilities() {
         () =>
             createTheme({
                 palette: {
-                    mode: prefersDarkMode ? 'dark' : 'light',
+                    mode: prefersDarkMode ? 'dark' : 'dark',
                 },
             }),
         [prefersDarkMode],
     );
 
     var currentUser = localStorage.getItem('currentUser');
+
+    const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
+        height: 60,
+        [`&.${linearProgressClasses.colorPrimary}`]: {
+            backgroundColor: '#eeeeee',
+        },
+        [`& .${linearProgressClasses.bar}`]: {
+            height: 60,
+            backgroundColor: '#00adb5',
+        },
+    }));
 
     const checkIn = (venue_id) => {
         var bodyFormData = new FormData();
@@ -178,51 +189,32 @@ export default function BlockFacilities() {
                         alignItems: 'center'
                     }}
                 >
-                    <Typography component="h1" variant="h5">
-                        View Block {blk} Facilities
+                    <Typography component="h1" variant="h2">
+                        Block Facilities
                     </Typography>
 
                     {items.msg ? <Alert severity="info" sx={{ mt: 2 }}>{items.msg}</Alert> :
                         <Grid container spacing={3} sx={{ mt: 3, mb: 8 }}>
                             {items.data.map(item => (
-                                <Grid item xs key={item.id}>
+                                <Grid item xs key={item.id} sx={{ mt: 0 }}>
                                     <Box sx={{ minWidth: { xs: '275px', md: "90vh" } }}>
-                                        <Card >
-                                            <Box sx={{ margin: 2 }}>
+                                            <Box>
                                                 <React.Fragment>
-
-                                                    <CardHeader
-                                                        title={
-                                                            <Grid container>
-                                                                <Typography component="h1" variant="h5" xs>
-                                                                    {item.name}
-                                                                </Typography>
-                                                                <Typography component="h2" variant="h6" xs sx={{ ml: 2 }} color="text.secondary">
-                                                                    {item.occupant.toString() + ' / ' + item.max_capacity.toString() + ' Users'}
-                                                                </Typography>
-                                                            </Grid>
-                                                        }
-                                                        subheader={
-                                                            Math.round(item.occupant / item.max_capacity * 100) >= 80 ? <Chip label="Quite Full" color="error" sx={{ mt: 1.5 }} /> : Math.round(item.occupant / item.max_capacity * 100) >= 40 ? <Chip label="Not That Empty" color="warning" sx={{ mt: 1.5 }} /> : <Chip label="Quite Empty" color="success" sx={{ mt: 1.5 }} />
-                                                        }
-                                                    />
-
-                                                    <CardContent sx={{ textAlign: 'center' }}>
+                                                    <CardContent sx={{ textAlign: 'right' }}>
                                                         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                                                            <Box sx={{ width: '100%', mr: 1 }}>
-                                                                <LinearProgress value={Math.round(item.occupant / item.max_capacity * 100)} variant="determinate" sx={{ height: 10, borderRadius: 5 }} />
+                                                            <Box sx={{ minWidth: 300 }}>
+                                                                <Typography component="h1" variant="h3" xs sx={{ textAlign: 'right' }}>{item.name}</Typography>
                                                             </Box>
-                                                            <Box sx={{ minWidth: 80 }}>
-                                                                <Typography variant="body2" color="text.secondary">{`${Math.round(item.occupant / item.max_capacity * 100)}% Full`}</Typography>
+                                                            <Box sx={{ width: '100%', ml: 3, mr: 1 }}>
+                                                                <BorderLinearProgress  value={Math.round(item.occupant / item.max_capacity * 100)} variant="determinate"/>
+                                                            </Box>
+                                                            <Box sx={{ minWidth: 200 }}>
+                                                                <Typography component="h1" variant="h3" xs>{`${Math.round(item.occupant / item.max_capacity * 100)}% Full`}</Typography>
                                                             </Box>
                                                         </Box>
                                                     </CardContent>
-                                                    <CardActions>
-                                                        { item.occupant < item.max_capacity ? "occupant_list" in item ? item.occupant_list.includes(currentUser) ? <Button onClick={() => checkOut(item.id)} size="small">Check Out</Button> : <Button onClick={() => checkIn(item.id)} size="small">Check In</Button> : <Button onClick={() => checkIn(item.id)} size="small">Check In</Button> : <Grid />}
-                                                    </CardActions>
                                                 </React.Fragment>
                                             </Box>
-                                        </Card>
                                     </Box>
                                 </Grid>
                             ))}
@@ -231,9 +223,9 @@ export default function BlockFacilities() {
 
                 </Box>
 
-                <Fab variant="extended" color="primary" onClick={() => navigate(-1)} style={{
+                <Fab variant="extended" color="secondary" onClick={() => navigate(-1)} style={{
                     position: 'fixed', bottom: theme.spacing(4),
-                    right: theme.spacing(4)
+                    left: theme.spacing(4)
                 }}>
                     <BackIcon sx={{ mr: 1 }} />
                     Back

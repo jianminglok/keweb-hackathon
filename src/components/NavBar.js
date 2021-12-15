@@ -110,7 +110,7 @@ export default function NavBar() {
 
     switch(hallName) {
         case 'KE7':
-            hallNameFull = 'KE VII Hall';
+            hallNameFull = 'King Edward VII';
             break;
         case 'Eusoff':
             hallNameFull = 'Eusoff Hall';
@@ -133,7 +133,7 @@ export default function NavBar() {
         () =>
             createTheme({
                 palette: {
-                    mode: prefersDarkMode ? 'dark' : 'light',
+                    mode: prefersDarkMode ? 'dark' : 'dark',
                 },
             }),
         [prefersDarkMode],
@@ -145,42 +145,10 @@ export default function NavBar() {
             <AppBar position="fixed" open={open}>
                 <Toolbar>
                     
-                    <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }} onClick={ () => navigate('/') }>
+                    <Typography variant="h5" noWrap component="div" sx={{ flexGrow: 1, textAlign: "center" }} onClick={ () => navigate('/') }>
                         { hallNameFull ? hallNameFull + ' Facility Checker' : 'NUS Halls Facility Checker' }
                     </Typography>
 
-                    {user && (
-                        <div>
-                            <IconButton
-                                size="large"
-                                aria-label="account of current user"
-                                aria-controls="menu-appbar"
-                                aria-haspopup="true"
-                                onClick={handleMenu}
-                                color="inherit"
-                            >
-                                <AccountCircle />
-                            </IconButton>
-                            <Menu
-                                id="menu-appbar"
-                                anchorEl={anchorEl}
-                                anchorOrigin={{
-                                    vertical: 'top',
-                                    horizontal: 'right',
-                                }}
-                                keepMounted
-                                transformOrigin={{
-                                    vertical: 'top',
-                                    horizontal: 'right',
-                                }}
-                                open={Boolean(anchorEl)}
-                                onClose={handleClose}
-                            >
-                                <MenuItem>{ 'Hi, ' + firstName + ' ' + lastName }</MenuItem>
-                                <MenuItem onClick={logoutUser}>Sign out</MenuItem>
-                            </Menu>
-                        </div>
-                    )}
                 </Toolbar>
             </AppBar>
             

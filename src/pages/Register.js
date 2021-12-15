@@ -182,9 +182,7 @@ export default function Register() {
                     >
                         Sign Up
                     </Button>
-
-
-
+                    
                     <Grid container justifyContent="flex-end">
                         <Grid item>
                             <Link href="/login" variant="body2">

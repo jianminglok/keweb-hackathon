@@ -28,7 +28,47 @@ export default function App() {
     () =>
       createTheme({
         palette: {
-          mode: prefersDarkMode ? 'dark' : 'light',
+          mode: prefersDarkMode ? 'dark' : 'dark',
+          primary: {
+            main: '#ffffff',
+          },
+          secondary: {
+            main: '#393e46',
+          },
+          background: {
+            default: "#222831"
+          },
+        },
+        typography: {
+          button: {
+            textTransform: 'none'
+          }
+        },
+        components: {
+          MuiToolbar: {
+            styleOverrides: {
+              root: {
+                // apply theme's border-radius instead of component's default
+                backgroundColor: '#393e46'
+              },
+            },
+          },
+          MuiCard: {
+            styleOverrides: {
+              root: {
+                // apply theme's border-radius instead of component's default
+                backgroundColor: '#393e46'
+              },
+            },
+          },
+          MuiPaper: {
+            styleOverrides: {
+              root: {
+                // apply theme's border-radius instead of component's default
+                backgroundColor: '#222831'
+              },
+            },
+          },
         },
       }),
     [prefersDarkMode],
