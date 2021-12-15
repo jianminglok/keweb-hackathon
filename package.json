@@ -1,0 +1,39 @@
+{
+  "name": "create-react-app",
+  "version": "5.0.0",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@mui/icons-material": "^5.2.1",
+    "@mui/material": "^5.2.3",
+    "axios": "^0.24.0",
+    "fetch-intercept": "^2.4.0",
+    "firebase": "^9.6.1",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-firebase-hooks": "^4.0.1",
+    "react-hook-form": "^7.21.2",
+    "react-router-dom": "^6.1.1",
+    "react-scripts": "latest"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "proxy": "https://keweb-hackathon-backend.herokuapp.com"
+}
