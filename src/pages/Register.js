@@ -178,27 +178,6 @@ export default function Register() {
                             )
                         }}
                     />
-                    <FormControl fullWidth sx={{ mt: 1 }}>
-                        <TextField
-                            select
-                            id="hall_name"
-                            label="Hall Name"
-                            defaultValue=''
-                            error={errors.hall_name ? true : false}
-                            helperText="Please select the hall your are residing in"
-                            required
-                            {...register("hall_name", {
-                                required: true
-                            })}
-                        >
-                            <MenuItem value='KE7'>King Edward VII Hall</MenuItem>
-                            <MenuItem value='Eusoff'>Eusoff Hall</MenuItem>
-                            <MenuItem value='KR'>Kent Ridge Hall</MenuItem>
-                            <MenuItem value='Raffles'>Raffles Hall</MenuItem>
-                            <MenuItem value='Sheares'>Sheares Hall</MenuItem>
-                            <MenuItem value='Temasek'>Temasek Hall</MenuItem>
-                        </TextField>
-                    </FormControl>
 
                     <Button
                         type="submit"

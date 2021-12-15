@@ -28,9 +28,9 @@ export default function useAuth() {
 
     //register user
     const registerUser = async (data) => {
-        const { first_name, last_name, email, password, hall_name } = data;
+        const { first_name, last_name, email, password } = data;
         return axios.post(`/api/register`, {
-            first_name, last_name, email, password, hall_name
+            first_name, last_name, email, password
         }).then(async () => {
             await setUserState();
         }).catch((err) => {
