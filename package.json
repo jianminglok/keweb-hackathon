@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "npm run start",
-    "build": "npm run build",
+    "start": "react-script start",
+    "build": "react-script build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
