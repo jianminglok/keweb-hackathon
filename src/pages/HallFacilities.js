@@ -189,7 +189,7 @@ export default function HallFacilities() {
                         alignItems: 'center'
                     }}
                 >
-                    <Typography component="h1" variant="h2">
+                    <Typography component="h1" variant="h2" sx={{textAlign: 'center'}}>
                         Hall Facilities
                     </Typography>
 
