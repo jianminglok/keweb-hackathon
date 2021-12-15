@@ -198,24 +198,29 @@ export default function HallFacilities() {
                             {items.data.map(item => (
                                 <Grid item xs key={item.id}>
                                     <Box sx={{ minWidth: { xs: '275px', md: "90vh" } }}>
-                                            <Box>
-                                                <React.Fragment>
-
-                                                    <CardContent sx={{ textAlign: 'right' }}>
-                                                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                                                            <Box sx={{ minWidth: 300 }}>
-                                                                <Typography component="h1" variant="h3" xs sx={{ textAlign: 'right' }}>{item.name}</Typography>
-                                                            </Box>
-                                                            <Box sx={{ width: '100%', ml: 3, mr: 1 }}>
-                                                                <BorderLinearProgress value={Math.round(item.occupant / item.max_capacity * 100)} variant="determinate" sx={{ height: 40 }} />
-                                                            </Box>
-                                                            <Box sx={{ minWidth: 250 }}>
-                                                                <Typography component="h1" variant="h3" xs>{`${Math.round(item.occupant / item.max_capacity * 100)}% Full`}</Typography>
-                                                            </Box>
+                                        <Box sx={{ margin: 2 }}>
+                                            <React.Fragment>
+                                                <CardHeader
+                                                    title={
+                                                        <Grid container>
+                                                            <Typography component="h1" variant="h5" xs>
+                                                                {item.name}
+                                                            </Typography>
+                                                        </Grid>
+                                                    }
+                                                />
+                                                <CardContent sx={{ textAlign: 'center' }}>
+                                                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                                                        <Box sx={{ width: '100%', mr: 1 }}>
+                                                            <BorderLinearProgress value={Math.round(item.occupant / item.max_capacity * 100)} variant="determinate" />
                                                         </Box>
-                                                    </CardContent>
-                                                </React.Fragment>
-                                            </Box>
+                                                        <Box sx={{ minWidth: 120 }}>
+                                                            <Typography component="h1" variant="h5" xs>{`${Math.round(item.occupant / item.max_capacity * 100)}% Full`}</Typography>
+                                                        </Box>
+                                                    </Box>
+                                                </CardContent>
+                                            </React.Fragment>
+                                        </Box>
                                     </Box>
                                 </Grid>
                             ))}

@@ -44,8 +44,6 @@ export default function BlockFacilities() {
         [prefersDarkMode],
     );
 
-    var currentUser = localStorage.getItem('currentUser');
-
     const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
         height: 60,
         [`&.${linearProgressClasses.colorPrimary}`]: {
@@ -56,6 +54,8 @@ export default function BlockFacilities() {
             backgroundColor: '#00adb5',
         },
     }));
+
+    var currentUser = localStorage.getItem('currentUser');
 
     const checkIn = (venue_id) => {
         var bodyFormData = new FormData();
@@ -196,25 +196,32 @@ export default function BlockFacilities() {
                     {items.msg ? <Alert severity="info" sx={{ mt: 2 }}>{items.msg}</Alert> :
                         <Grid container spacing={3} sx={{ mt: 3, mb: 8 }}>
                             {items.data.map(item => (
-                                <Grid item xs key={item.id} sx={{ mt: 0 }}>
+                                <Grid item xs key={item.id}>
                                     <Box sx={{ minWidth: { xs: '275px', md: "90vh" } }}>
-                                            <Box>
-                                                <React.Fragment>
-                                                    <CardContent sx={{ textAlign: 'right' }}>
-                                                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                                                            <Box sx={{ minWidth: 300 }}>
-                                                                <Typography component="h1" variant="h3" xs sx={{ textAlign: 'right' }}>{item.name}</Typography>
-                                                            </Box>
-                                                            <Box sx={{ width: '100%', ml: 3, mr: 1 }}>
-                                                                <BorderLinearProgress  value={Math.round(item.occupant / item.max_capacity * 100)} variant="determinate"/>
-                                                            </Box>
-                                                            <Box sx={{ minWidth: 250 }}>
-                                                                <Typography component="h1" variant="h3" xs>{`${Math.round(item.occupant / item.max_capacity * 100)}% Full`}</Typography>
-                                                            </Box>
+
+                                        <Box sx={{ margin: 2 }}>
+                                            <React.Fragment>
+                                                <CardHeader
+                                                    title={
+                                                        <Grid container>
+                                                            <Typography component="h1" variant="h5" xs>
+                                                                {item.name}
+                                                            </Typography>
+                                                        </Grid>
+                                                    }
+                                                />
+                                                <CardContent sx={{ textAlign: 'center' }}>
+                                                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                                                        <Box sx={{ width: '100%', mr: 1 }}>
+                                                            <BorderLinearProgress value={Math.round(item.occupant / item.max_capacity * 100)} variant="determinate" />
                                                         </Box>
-                                                    </CardContent>
-                                                </React.Fragment>
-                                            </Box>
+                                                        <Box sx={{ minWidth: 120 }}>
+                                                            <Typography component="h1" variant="h5" xs>{`${Math.round(item.occupant / item.max_capacity * 100)}% Full`}</Typography>
+                                                        </Box>
+                                                    </Box>
+                                                </CardContent>
+                                            </React.Fragment>
+                                        </Box>
                                     </Box>
                                 </Grid>
                             ))}

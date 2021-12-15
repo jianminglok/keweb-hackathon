@@ -95,7 +95,7 @@ export default function Home() {
                                         <React.Fragment>
                                             <CardContent sx={{ margin: 3 }}>
                                                 <Typography variant="h2" component="div">
-                                                    Hall Facility
+                                                    Hall Facilities
                                                 </Typography>
                                             </CardContent>
                                         </React.Fragment>
@@ -110,7 +110,7 @@ export default function Home() {
                                         <React.Fragment>
                                             <CardContent sx={{ margin: 3 }}>
                                                 <Typography variant="h2" component="div">
-                                                    Block Facility
+                                                    Block Facilities
                                                 </Typography>
                                             </CardContent>
                                         </React.Fragment>
