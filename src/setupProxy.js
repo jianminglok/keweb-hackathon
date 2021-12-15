@@ -1,5 +1,5 @@
 const proxy = require("http-proxy-middleware");
 
 module.exports = app => {
-  app.use(proxy("/api/*", { target: "https://nushalls-backend.jianminglok.gq" }));
+  app.use(proxy("/api/*", { target: "https://nushalls-backend.jianminglok.gq/" }));
 };
