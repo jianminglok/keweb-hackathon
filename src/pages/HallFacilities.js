@@ -209,7 +209,7 @@ export default function HallFacilities() {
                                                             <Box sx={{ width: '100%', ml: 3, mr: 1 }}>
                                                                 <BorderLinearProgress value={Math.round(item.occupant / item.max_capacity * 100)} variant="determinate" sx={{ height: 40 }} />
                                                             </Box>
-                                                            <Box sx={{ minWidth: 200 }}>
+                                                            <Box sx={{ minWidth: 250 }}>
                                                                 <Typography component="h1" variant="h3" xs>{`${Math.round(item.occupant / item.max_capacity * 100)}% Full`}</Typography>
                                                             </Box>
                                                         </Box>
