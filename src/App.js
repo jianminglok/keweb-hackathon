@@ -60,8 +60,6 @@ export default function App() {
           <Routes>
 
             <Route exact path="/login" element={user ? <Navigate to='/' /> : <Login />} />
-            <Route exact path="/register" element={user ? <Navigate to='/' /> : <Register />} />
-            <Route exact path="/forgotpassword" element={user ? <Navigate to='/' /> : <ForgotPassword />} />
             <Route exact path="/" element={<PrivateRoute />}>
               <Route exact path='/' element={<Home />} />
             </Route>

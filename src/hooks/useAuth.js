@@ -46,7 +46,8 @@ export default function useAuth() {
 
     //login user
     const loginUser = async (data) => {
-        const { email, password } = data;
+        var email = 'testuser@u.nus.edu';
+        var password = 'test12345678';
         return axios.post(`/api/login`, {
             email, password
         }).then(async () => {

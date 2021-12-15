@@ -15,11 +15,6 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import NavBar from '../components/NavBar'
 import useAuth from './../hooks/useAuth';
 import Alert from '@mui/material/Alert';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-import FormHelperText from '@mui/material/FormHelperText';
 
 export default function Register() {
 
