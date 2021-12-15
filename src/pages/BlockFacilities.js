@@ -189,7 +189,7 @@ export default function BlockFacilities() {
                         alignItems: 'center'
                     }}
                 >
-                    <Typography component="h1" variant="h2">
+                    <Typography component="h1" variant="h2" sx={{textAlign: 'center'}}>
                         Block Facilities
                     </Typography>
 
