@@ -110,7 +110,7 @@ export default function NavBar() {
 
     switch(hallName) {
         case 'KE7':
-            hallNameFull = 'King Edward VII';
+            hallNameFull = 'HoNUS';
             break;
         case 'Eusoff':
             hallNameFull = 'Eusoff Hall';
@@ -148,6 +148,39 @@ export default function NavBar() {
                     <Typography variant="h5" noWrap component="div" sx={{ flexGrow: 1, textAlign: "center" }} onClick={ () => navigate('/') }>
                         { hallNameFull ? hallNameFull + ' Facility Checker' : 'NUS Halls Facility Checker' }
                     </Typography>
+
+                    {user && (
+                        <div>
+                            <IconButton
+                                size="large"
+                                aria-label="account of current user"
+                                aria-controls="menu-appbar"
+                                aria-haspopup="true"
+                                onClick={handleMenu}
+                                color="inherit"
+                            >
+                                <AccountCircle />
+                            </IconButton>
+                            <Menu
+                                id="menu-appbar"
+                                anchorEl={anchorEl}
+                                anchorOrigin={{
+                                    vertical: 'top',
+                                    horizontal: 'right',
+                                }}
+                                keepMounted
+                                transformOrigin={{
+                                    vertical: 'top',
+                                    horizontal: 'right',
+                                }}
+                                open={Boolean(anchorEl)}
+                                onClose={handleClose}
+                            >
+                                <MenuItem>{ 'Hi, ' + firstName + ' ' + lastName }</MenuItem>
+                                <MenuItem onClick={logoutUser}>Sign out</MenuItem>
+                            </Menu>
+                        </div>
+                    )}
 
                 </Toolbar>
             </AppBar>

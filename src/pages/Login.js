@@ -54,7 +54,7 @@ export default function Login() {
                     }}
                 >
                     <Typography component="h1" variant="h5" sx={{ textAlign: 'center' }}>
-                        King Edward VII Facility Checker
+                        HoNUS Facility Checker
                     </Typography>
                     <Box component="form" noValidate onSubmit={handleSubmit(onSubmit)} sx={{ mt: 1 }}>
                         <TextField
